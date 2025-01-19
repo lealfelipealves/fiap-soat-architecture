@@ -1,8 +1,8 @@
 import { PaginationParams } from '@/core/repositories/pagination-params'
 import { Product } from '@/domain/fastfood/enterprise/entities'
-import { IProductRepository } from '@/domain/fastfood/application/repositories/product-repository'
+import { ProductRepository } from '@/domain/fastfood/application/repositories/product-repository'
 
-export class InMemoryProductsRepository implements IProductRepository {
+export class InMemoryProductsRepository implements ProductRepository {
   public items: Product[] = []
 
   async findById(id: string) {

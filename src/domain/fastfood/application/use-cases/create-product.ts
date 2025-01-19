@@ -1,4 +1,4 @@
-import { IProductRepository } from '@/domain/fastfood/application/repositories/product-repository'
+import { ProductRepository } from '@/domain/fastfood/application/repositories/product-repository'
 import { Product } from '@/domain/fastfood/enterprise/entities'
 import { Category } from '@/domain/fastfood/enterprise/entities/value-objects'
 import { Either, right } from '@/core/either'
@@ -18,7 +18,7 @@ type CreateProductUseCaseResponse = Either<
 >
 
 export class CreateProductUseCase {
-  constructor(private readonly productRepository: IProductRepository) {}
+  constructor(private readonly productRepository: ProductRepository) {}
 
   async execute({
     name,

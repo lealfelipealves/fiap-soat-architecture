@@ -1,4 +1,4 @@
-import { ICustomerRepository } from '@/domain/fastfood/application/repositories/customer-repository'
+import { CustomerRepository } from '@/domain/fastfood/application/repositories/customer-repository'
 import { Customer } from '@/domain/fastfood/enterprise/entities'
 import { Email } from '@/domain/fastfood/enterprise/entities/value-objects'
 import { Either, right } from '@/core/either'
@@ -16,7 +16,7 @@ type CreateCustomerUseCaseResponse = Either<
 >
 
 export class CreateCustomerUseCase {
-  constructor(private readonly customerRepository: ICustomerRepository) {}
+  constructor(private readonly customerRepository: CustomerRepository) {}
 
   async execute({
     name,

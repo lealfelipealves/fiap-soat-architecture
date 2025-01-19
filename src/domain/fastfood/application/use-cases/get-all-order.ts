@@ -1,6 +1,6 @@
 import { Either, right } from '@/core/either'
 import { Order } from '@/domain/fastfood/enterprise/entities'
-import { IOrderRepository } from '../repositories/order-repository'
+import { OrderRepository } from '../repositories/order-repository'
 
 interface GetAllOrderUseCaseRequest {
   page: number
@@ -14,7 +14,7 @@ type GetAllOrderUseCaseResponse = Either<
 >
 
 export class GetAllOrderUseCase {
-  constructor(private readonly orderRepository: IOrderRepository) {}
+  constructor(private readonly orderRepository: OrderRepository) {}
 
   async execute({
     page

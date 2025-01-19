@@ -1,8 +1,7 @@
 import { Product } from '@/domain/fastfood/enterprise/entities/product'
-import { CategoryType } from '../../enterprise/entities/value-objects'
 import { PaginationParams } from '@/core/repositories/pagination-params'
 
-export abstract class IProductRepository {
+export abstract class ProductRepository {
   abstract findById(id: string): Promise<Product | null>
   abstract findManyByCategory(
     category: string,

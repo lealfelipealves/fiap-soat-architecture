@@ -1,7 +1,8 @@
 import { Either, left, right } from '@/core/either'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
-import { ICustomerRepository } from '@/domain/fastfood/application/repositories/customer-repository'
+import { CustomerRepository } from '@/domain/fastfood/application/repositories/customer-repository'
 import { Customer } from '@/domain/fastfood/enterprise/entities'
+import { Injectable } from '@nestjs/common'
 
 interface GetCustomerByCpfUseCaseRequest {
   cpf: string
@@ -14,8 +15,9 @@ type GetCustomerByCpfUseCaseResponse = Either<
   }
 >
 
+@Injectable()
 export class GetCustomerByCpfUseCase {
-  constructor(private readonly customerRepository: ICustomerRepository) {}
+  constructor(private readonly customerRepository: CustomerRepository) {}
 
   async execute({
     cpf

@@ -1,4 +1,4 @@
-import { IOrderRepository } from '@/domain/fastfood/application/repositories/order-repository'
+import { OrderRepository } from '@/domain/fastfood/application/repositories/order-repository'
 import { Order } from '@/domain/fastfood/enterprise/entities'
 import { Either, right } from '@/core/either'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
@@ -18,7 +18,7 @@ type CreateOrderUseCaseResponse = Either<
 >
 
 export class CreateOrderUseCase {
-  constructor(private readonly orderRepository: IOrderRepository) {}
+  constructor(private readonly orderRepository: OrderRepository) {}
 
   async execute({
     customerId,

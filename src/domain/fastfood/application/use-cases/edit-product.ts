@@ -1,6 +1,5 @@
-import { IProductRepository } from '@/domain/fastfood/application/repositories/product-repository'
+import { ProductRepository } from '@/domain/fastfood/application/repositories/product-repository'
 import { Product } from '@/domain/fastfood/enterprise/entities'
-import { Category } from '@/domain/fastfood/enterprise/entities/value-objects'
 import { Either, left, right } from '@/core/either'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 import { NotAllowedError } from '@/core/errors/errors/not-allowed-error'
@@ -21,7 +20,7 @@ type EditProductUseCaseResponse = Either<
 >
 
 export class EditProductUseCase {
-  constructor(private readonly productRepository: IProductRepository) {}
+  constructor(private readonly productRepository: ProductRepository) {}
 
   async execute({
     productId,

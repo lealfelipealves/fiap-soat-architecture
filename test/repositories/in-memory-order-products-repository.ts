@@ -1,8 +1,8 @@
-import { IOrderProductsRepository } from '@/domain/fastfood/application/repositories/order-products-repository'
+import { OrderProductsRepository } from '@/domain/fastfood/application/repositories/order-products-repository'
 import { OrderProduct } from '@/domain/fastfood/enterprise/entities/order-product'
 
 export class InMemoryOrderProductsRepository
-  implements IOrderProductsRepository
+  implements OrderProductsRepository
 {
   public items: OrderProduct[] = []
 

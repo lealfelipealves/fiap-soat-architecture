@@ -1,5 +1,5 @@
 import { Either, left, right } from '@/core/either'
-import { IProductRepository } from '../repositories/product-repository'
+import { ProductRepository } from '../repositories/product-repository'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 import { NotAllowedError } from '@/core/errors/errors/not-allowed-error'
 
@@ -12,7 +12,7 @@ type DeleteProductUseCaseResponse = Either<
   null
 >
 export class DeleteProductUseCase {
-  constructor(private productRepository: IProductRepository) {}
+  constructor(private productRepository: ProductRepository) {}
 
   async execute({
     productId

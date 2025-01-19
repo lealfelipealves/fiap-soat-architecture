@@ -1,6 +1,5 @@
 import { Either, right } from '@/core/either'
-import { IProductRepository } from '../repositories/product-repository'
-import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
+import { ProductRepository } from '../repositories/product-repository'
 import { Product } from '../../enterprise/entities'
 
 interface GetProductByCategoryUseCaseRequest {
@@ -15,7 +14,7 @@ type GetProductByCategoryUseCaseResponse = Either<
   }
 >
 export class GetProductByCategoryUseCase {
-  constructor(private productRepository: IProductRepository) {}
+  constructor(private productRepository: ProductRepository) {}
 
   async execute({
     category,

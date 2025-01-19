@@ -1,7 +1,7 @@
-import { ICustomerRepository } from '@/domain/fastfood/application/repositories/customer-repository'
+import { CustomerRepository } from '@/domain/fastfood/application/repositories/customer-repository'
 import { Customer } from '@/domain/fastfood/enterprise/entities'
 
-export class InMemoryCustomersRepository implements ICustomerRepository {
+export class InMemoryCustomersRepository implements CustomerRepository {
   public items: Customer[] = []
 
   async findByCpf(cpf: string): Promise<Customer | null> {
