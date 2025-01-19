@@ -1,5 +1,4 @@
 import { makeProduct } from 'test/factories/make-product'
-import { CategoryType } from '../../enterprise/entities/value-objects'
 import { DeleteProductUseCase } from './delete-product'
 import { InMemoryProductsRepository } from 'test/repositories/in-memory-products-repository'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'

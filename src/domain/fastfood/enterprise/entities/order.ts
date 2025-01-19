@@ -1,7 +1,6 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { AggregateRoot } from '@/core/entities/aggregate-root'
 import { Optional } from '@/core/types/optional'
-import { Product } from './product'
 import { Status } from './value-objects'
 import { OrderProductList } from './order-product-list'
 

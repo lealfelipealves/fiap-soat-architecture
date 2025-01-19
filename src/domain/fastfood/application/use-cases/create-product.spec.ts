@@ -1,4 +1,3 @@
-import { CategoryType } from '../../enterprise/entities/value-objects'
 import { CreateProductUseCase } from './create-product'
 import { InMemoryProductsRepository } from 'test/repositories/in-memory-products-repository'
 

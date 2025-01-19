@@ -10,7 +10,7 @@ describe('Create Customer by cpf (E2E)', () => {
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
-      imports: [AppModule],
+      imports: [AppModule]
     }).compile()
 
     app = moduleRef.createNestApplication()
@@ -21,17 +21,19 @@ describe('Create Customer by cpf (E2E)', () => {
   })
 
   test('[POST] /customers/:cpf', async () => {
-    const response = await request(app.getHttpServer()).post('/customers/42217866044').send({
-      name: 'John Doe',
-      email: 'johndoe@example.com',
-    })
+    const response = await request(app.getHttpServer())
+      .post('/customers/42217866044')
+      .send({
+        name: 'John Doe',
+        email: 'johndoe@example.com'
+      })
 
     expect(response.statusCode).toBe(201)
 
     const customerOnDatabase = await prisma.customer.findUnique({
       where: {
-        email: 'johndoe@example.com',
-      },
+        email: 'johndoe@example.com'
+      }
     })
 
     expect(customerOnDatabase).toBeTruthy()

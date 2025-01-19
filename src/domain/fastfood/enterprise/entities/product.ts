@@ -1,6 +1,6 @@
 import { Entity } from '@/core/entities/entity'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
-import { Category, CategoryType } from './value-objects'
+import { Category } from './value-objects'
 
 export interface ProductProps {
   name: string
