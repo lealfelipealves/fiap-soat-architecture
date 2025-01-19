@@ -7,10 +7,10 @@ import { Injectable } from '@nestjs/common'
 
 interface EditProductUseCaseRequest {
   productId: string
-  name: string
-  description: string
-  price: number
-  category: string
+  name?: string
+  description?: string
+  price?: number
+  category?: string
 }
 
 type EditProductUseCaseResponse = Either<
@@ -37,10 +37,10 @@ export class EditProductUseCase {
       return left(new ResourceNotFoundError())
     }
 
-    product.name = name
-    product.description = description
-    product.price = price
-    product.category = category
+    product.name = name ?? product.name
+    product.description = description ?? product.description
+    product.price = price ?? product.price
+    product.category = category ?? product.category.toString()
 
     await this.productRepository.save(product)
 

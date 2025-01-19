@@ -8,17 +8,17 @@ datasource db {
 }
 
 enum ProductCategory {
-  SNACK
-  SIDE_DISH
-  DRINK
-  DESSERT
+  Lanche
+  Acompanhamento
+  Bebida
+  Sobremesa
 }
 
 enum OrderStatus {
-  RECEIVED
-  IN_PREPARATION
-  READY
-  FINALIZED
+  Recebido
+  Preparação
+  Pronto
+  Finalizado
 }
 
 model Customer {
@@ -37,7 +37,7 @@ model Product {
   name         String
   description  String
   price        Float           @default(0)
-  category     ProductCategory @default(SNACK)
+  category     ProductCategory @default(Lanche)
   Order        Order?          @relation(fields: [orderId], references: [id])
   orderId      String?
   OrderProduct OrderProduct[]
@@ -48,7 +48,7 @@ model Product {
 model Order {
   id         String      @id @default(uuid())
   customerId String      @map("customer_id")
-  status     OrderStatus @default(RECEIVED)
+  status     OrderStatus @default(Recebido)
   createdAt  DateTime    @default(now()) @map("created_at")
   updatedAt  DateTime?   @updatedAt @map("updated_at")
 

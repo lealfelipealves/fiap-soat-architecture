@@ -7,7 +7,6 @@ export interface CustomerProps {
   cpf?: Cpf
   name?: string
   email?: Email
-  isAnonymous: boolean
 }
 
 export class Customer extends Entity<CustomerProps> {
@@ -23,23 +22,16 @@ export class Customer extends Entity<CustomerProps> {
     return this.props.email
   }
 
-  get isAnonymous() {
-    return this.props.isAnonymous
-  }
-
   static create(
-    props: Optional<CustomerProps, 'cpf' | 'name' | 'email' | 'isAnonymous'>,
+    props: Optional<CustomerProps, 'cpf' | 'name' | 'email'>,
     id?: UniqueEntityID
   ) {
-    const isAnonymous = !props.cpf && !props.email && !props.name
-
     const customer = new Customer(
       {
         ...props,
         cpf: props.cpf ? Cpf.create(props.cpf.getValue()) : undefined,
-        name: props.name ?? (isAnonymous ? 'Anônimo' : undefined),
-        email: props.email ? Email.create(props.email.toString()) : undefined,
-        isAnonymous
+        name: props.name ?? 'Anônimo',
+        email: props.email ? Email.create(props.email.toString()) : undefined
       },
       id
     )

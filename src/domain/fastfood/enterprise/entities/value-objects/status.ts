@@ -3,7 +3,7 @@ export class Status {
   private readonly value: string
 
   public static readonly RECEIVED = 'Recebido'
-  public static readonly IN_PREPARATION = 'Em preparação'
+  public static readonly IN_PREPARATION = 'Preparação'
   public static readonly READY = 'Pronto'
   public static readonly FINALIZED = 'Finalizado'
 
@@ -46,7 +46,7 @@ export class Status {
       [key in StatusType]: string[]
     } = {
       Recebido: ['Em preparação'],
-      'Em preparação': ['Pronto'],
+      Preparação: ['Pronto'],
       Pronto: ['Finalizado'],
       Finalizado: []
     }

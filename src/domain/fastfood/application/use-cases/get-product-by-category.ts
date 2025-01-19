@@ -5,7 +5,7 @@ import { Injectable } from '@nestjs/common'
 
 interface GetProductByCategoryUseCaseRequest {
   category: string
-  page: number
+  page?: number
 }
 
 type GetProductByCategoryUseCaseResponse = Either<
@@ -23,9 +23,7 @@ export class GetProductByCategoryUseCase {
     category,
     page
   }: GetProductByCategoryUseCaseRequest): Promise<GetProductByCategoryUseCaseResponse> {
-    const products = await this.productRepository.findManyByCategory(category, {
-      page
-    })
+    const products = await this.productRepository.findManyByCategory(category)
 
     return right({
       products
