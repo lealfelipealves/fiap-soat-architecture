@@ -2,8 +2,17 @@ import { Body, Controller, HttpCode, Param, Post } from '@nestjs/common'
 import { CreateCustomerUseCase } from '@/domain/fastfood/application/use-cases/create-customer'
 import { CustomerPresenter } from '../presenters/customer-presenter'
 
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOperation,
+  ApiResponse,
+  ApiTags
+} from '@nestjs/swagger'
+
 import { z } from 'zod'
 import { ZodValidationPipe } from '@/infra/http/pipes/zod-validation-pipe'
+import { Customer } from '@/domain/fastfood/enterprise/entities'
 
 const createCustomerBodySchema = z.object({
   name: z.string(),
@@ -14,12 +23,23 @@ const bodyValidationPipe = new ZodValidationPipe(createCustomerBodySchema)
 
 type CreateCustomerBodySchema = z.infer<typeof createCustomerBodySchema>
 
+@ApiTags('Customers')
 @Controller('/customers/:cpf')
 export class CreateCustomerController {
   constructor(private createCustomer: CreateCustomerUseCase) {}
 
   @Post()
   @HttpCode(201)
+  @ApiOperation({ summary: 'Create customer' })
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        name: { type: 'string' },
+        email: { type: 'string' }
+      }
+    }
+  })
   async handle(
     @Param('cpf') cpf: string,
     @Body(bodyValidationPipe) body: CreateCustomerBodySchema

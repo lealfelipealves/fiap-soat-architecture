@@ -3,14 +3,19 @@ import { defineConfig } from 'vitest/config'
 import tsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  },
   test: {
     globals: true,
-    root: './',
+    root: './'
   },
   plugins: [
     tsConfigPaths(),
     swc.vite({
-      module: { type: 'es6' },
-    }),
-  ],
+      module: { type: 'es6' }
+    })
+  ]
 })
