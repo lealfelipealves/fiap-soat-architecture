@@ -12,7 +12,7 @@ export class Cpf {
       throw new Error(`Invalid CPF: ${value}`)
     }
 
-    return new Cpf(Cpf.format(sanitizedValue))
+    return new Cpf(sanitizedValue)
   }
 
   private static isValid(cpf: string): boolean {
@@ -43,6 +43,10 @@ export class Cpf {
 
   public toString(): string {
     return this.value
+  }
+
+  public toFormattedString(): string {
+    return Cpf.format(this.value)
   }
 
   public toValue(): string {
