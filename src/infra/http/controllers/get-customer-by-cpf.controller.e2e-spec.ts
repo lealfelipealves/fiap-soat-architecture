@@ -24,7 +24,7 @@ describe('Get Customer by cpf (E2E)', () => {
   })
 
   test('[GET] /customers/:cpf', async () => {
-    const customer = await customerFactory.makePrismaCustome({
+    const customer = await customerFactory.makePrismaCustomer({
       cpf: Cpf.create('42217866044'),
       name: 'John Doe',
       email: Email.create('john@example.com')

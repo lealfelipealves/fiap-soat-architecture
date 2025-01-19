@@ -48,6 +48,9 @@ CREATE TABLE "order_products" (
 );
 
 -- CreateIndex
+CREATE UNIQUE INDEX "customers_cpf_key" ON "customers"("cpf");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "customers_email_key" ON "customers"("email");
 
 -- AddForeignKey

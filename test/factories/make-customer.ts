@@ -27,7 +27,7 @@ export function makeCustomer(
 export class CustomerFactory {
   constructor(private prisma: PrismaService) {}
 
-  async makePrismaCustome(
+  async makePrismaCustomer(
     data: Partial<CustomerProps> = {}
   ): Promise<Customer> {
     const customer = makeCustomer(data)
