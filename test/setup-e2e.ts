@@ -1,6 +1,9 @@
 import { config } from 'dotenv'
 
 import { PrismaClient } from '@prisma/client'
+import { randomUUID } from 'node:crypto'
+import { execSync } from 'node:child_process'
+import { DomainEvents } from '@/core/events/domain-events'
 import { envSchema } from '@/infra/env/env'
 
 config({ path: '.env', override: true })
@@ -31,9 +34,7 @@ beforeAll(async () => {
 
   DomainEvents.shouldRun = false
 
-  await redis.flushdb()
-
-  execSync('pnpm prisma migrate deploy')
+  execSync('npm prisma migrate deploy')
 })
 
 afterAll(async () => {
