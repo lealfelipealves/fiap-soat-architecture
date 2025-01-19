@@ -34,7 +34,7 @@ beforeAll(async () => {
 
   DomainEvents.shouldRun = false
 
-  execSync('npm prisma migrate deploy')
+  execSync('npx prisma migrate deploy')
 })
 
 afterAll(async () => {
