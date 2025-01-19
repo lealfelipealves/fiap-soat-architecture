@@ -3,6 +3,7 @@ import { Product } from '@/domain/fastfood/enterprise/entities'
 import { Either, left, right } from '@/core/either'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 import { NotAllowedError } from '@/core/errors/errors/not-allowed-error'
+import { Injectable } from '@nestjs/common'
 
 interface EditProductUseCaseRequest {
   productId: string
@@ -19,6 +20,7 @@ type EditProductUseCaseResponse = Either<
   }
 >
 
+@Injectable()
 export class EditProductUseCase {
   constructor(private readonly productRepository: ProductRepository) {}
 

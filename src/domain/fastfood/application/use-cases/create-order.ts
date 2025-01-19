@@ -4,6 +4,7 @@ import { Either, right } from '@/core/either'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { OrderProduct } from '../../enterprise/entities/order-product'
 import { OrderProductList } from '../../enterprise/entities/order-product-list'
+import { Injectable } from '@nestjs/common'
 
 interface CreateOrderUseCaseRequest {
   customerId: string
@@ -17,6 +18,7 @@ type CreateOrderUseCaseResponse = Either<
   }
 >
 
+@Injectable()
 export class CreateOrderUseCase {
   constructor(private readonly orderRepository: OrderRepository) {}
 

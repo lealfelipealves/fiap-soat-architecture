@@ -2,6 +2,7 @@ import { ProductRepository } from '@/domain/fastfood/application/repositories/pr
 import { Product } from '@/domain/fastfood/enterprise/entities'
 import { Category } from '@/domain/fastfood/enterprise/entities/value-objects'
 import { Either, right } from '@/core/either'
+import { Injectable } from '@nestjs/common'
 
 interface CreateProductUseCaseRequest {
   name: string
@@ -17,6 +18,7 @@ type CreateProductUseCaseResponse = Either<
   }
 >
 
+@Injectable()
 export class CreateProductUseCase {
   constructor(private readonly productRepository: ProductRepository) {}
 

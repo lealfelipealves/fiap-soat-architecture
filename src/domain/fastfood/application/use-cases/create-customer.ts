@@ -2,6 +2,7 @@ import { CustomerRepository } from '@/domain/fastfood/application/repositories/c
 import { Customer } from '@/domain/fastfood/enterprise/entities'
 import { Email } from '@/domain/fastfood/enterprise/entities/value-objects'
 import { Either, right } from '@/core/either'
+import { Injectable } from '@nestjs/common'
 
 interface CreateCustomerUseCaseRequest {
   name?: string
@@ -15,6 +16,7 @@ type CreateCustomerUseCaseResponse = Either<
   }
 >
 
+@Injectable()
 export class CreateCustomerUseCase {
   constructor(private readonly customerRepository: CustomerRepository) {}
 
