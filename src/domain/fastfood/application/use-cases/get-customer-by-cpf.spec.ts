@@ -14,13 +14,13 @@ describe('Get Customer By Cpf', () => {
 
   it('should be able to get a customer by cpf', async () => {
     const newCustomer = makeCustomer({
-      cpf: Cpf.create('241.785.300-03')
+      cpf: Cpf.create('24178530003')
     })
 
     await inMemoryCustomersRepository.create(newCustomer)
 
     const result = await sut.execute({
-      cpf: '241.785.300-03'
+      cpf: '24178530003'
     })
 
     expect(result.value).toMatchObject({

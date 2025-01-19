@@ -12,7 +12,7 @@ describe('Create Customer', () => {
 
   it('should be able to create a customer', async () => {
     const result = await sut.execute({
-      cpf: '12345678912',
+      cpf: '24178530003',
       name: 'Customer 1',
       email: 'customer1@email.com'
     })
