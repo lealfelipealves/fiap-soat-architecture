@@ -15,16 +15,12 @@ export class InMemoryProductsRepository implements ProductRepository {
     return product
   }
 
-  async findManyByCategory(category: string, { page }: PaginationParams) {
-    const itemsPerPage = 10
+  async findManyByCategory(category: string) {
     const filteredProducts = this.items.filter(
       (product) => product.category.getValue() === category
     )
 
-    return filteredProducts.slice(
-      (page - 1) * itemsPerPage,
-      page * itemsPerPage
-    )
+    return filteredProducts
   }
 
   async create(product: Product) {

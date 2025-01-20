@@ -22,12 +22,11 @@ enum OrderStatus {
 }
 
 model Customer {
-  id          String  @id @default(uuid())
-  cpf         String? @unique
-  name        String?
-  email       String? @unique
-  isAnonymous Boolean @default(true)
-  Order       Order[]
+  id    String  @id @default(uuid())
+  cpf   String? @unique
+  name  String?
+  email String? @unique
+  Order Order[]
 
   @@map("customers")
 }

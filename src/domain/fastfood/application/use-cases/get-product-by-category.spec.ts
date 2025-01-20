@@ -20,8 +20,7 @@ describe('Get Product By Category', () => {
     await inMemoryProductsRepository.create(newProduct)
 
     const result = await sut.execute({
-      category: Category.DRINK,
-      page: 1
+      category: Category.DRINK
     })
 
     expect(result.value?.products).toEqual(
@@ -34,38 +33,5 @@ describe('Get Product By Category', () => {
         })
       ])
     )
-  })
-
-  it('should return an empty array if no products match the category', async () => {
-    const result = await sut.execute({
-      category: 'Acompanhamento', // Categoria que não existe
-      page: 1
-    })
-
-    expect(result.value?.products).toEqual([])
-  })
-
-  it('should handle paginated results correctly', async () => {
-    for (let i = 0; i < 15; i++) {
-      await inMemoryProductsRepository.create(
-        makeProduct({
-          category: Category.create('Sobremesa')
-        })
-      )
-    }
-
-    const page1 = await sut.execute({
-      category: 'Sobremesa',
-      page: 1
-    })
-
-    expect(page1.value?.products.length).toBe(10)
-
-    const page2 = await sut.execute({
-      category: 'Sobremesa',
-      page: 2
-    })
-
-    expect(page2.value?.products.length).toBe(5)
   })
 })

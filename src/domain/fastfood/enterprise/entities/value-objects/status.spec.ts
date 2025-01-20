@@ -34,14 +34,14 @@ describe('Status Value Object', () => {
     expect(status.canTransitionTo('Finalizado')).toBe(false)
   })
 
-  it("should allow transition from 'Em preparação' to 'Pronto'", () => {
-    const status = Status.create('Em preparação')
+  it("should allow transition from 'Preparação' to 'Pronto'", () => {
+    const status = Status.create('Preparação')
     expect(status.canTransitionTo('Pronto')).toBe(true)
   })
 
   it("should not allow transition from 'Finalizado' to any other status", () => {
     const status = Status.create('Finalizado')
     expect(status.canTransitionTo('Pronto')).toBe(false)
-    expect(status.canTransitionTo('Em preparação')).toBe(false)
+    expect(status.canTransitionTo('Preparação')).toBe(false)
   })
 })

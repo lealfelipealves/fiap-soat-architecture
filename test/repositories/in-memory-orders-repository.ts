@@ -13,11 +13,10 @@ export class InMemoryOrdersRepository implements OrderRepository {
     private productsRepository: InMemoryProductsRepository
   ) {}
 
-  async getAll({ page }: PaginationParams) {
-    const itemsPerPage = 10
-    const orders = this.items
-      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
-      .slice((page - 1) * itemsPerPage, page * itemsPerPage)
+  async getAll() {
+    const orders = this.items.sort(
+      (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
+    )
 
     return orders
   }
