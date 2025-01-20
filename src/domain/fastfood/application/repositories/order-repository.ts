@@ -1,4 +1,3 @@
-import { PaginationParams } from '@/core/repositories/pagination-params'
 import { Order } from '@/domain/fastfood/enterprise/entities/order'
 
 export abstract class OrderRepository {

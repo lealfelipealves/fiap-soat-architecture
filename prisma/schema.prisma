@@ -37,8 +37,6 @@ model Product {
   description  String
   price        Float           @default(0)
   category     ProductCategory @default(Lanche)
-  Order        Order?          @relation(fields: [orderId], references: [id])
-  orderId      String?
   OrderProduct OrderProduct[]
 
   @@map("products")
@@ -52,7 +50,6 @@ model Order {
   updatedAt  DateTime?   @updatedAt @map("updated_at")
 
   customer     Customer       @relation(fields: [customerId], references: [id])
-  Product      Product[]
   OrderProduct OrderProduct[]
 
   @@map("orders")

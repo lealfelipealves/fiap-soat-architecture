@@ -1,4 +1,4 @@
-import { Get, Module } from '@nestjs/common'
+import { Module } from '@nestjs/common'
 import { DatabaseModule } from '../database/database.module'
 import { GetCustomerByCpfController } from './controllers/get-customer-by-cpf.controller'
 import { GetCustomerByCpfUseCase } from '@/domain/fastfood/application/use-cases/get-customer-by-cpf'
@@ -14,15 +14,18 @@ import { GetProductByCategoryController } from './controllers/get-product-by-cat
 import { GetProductByCategoryUseCase } from '@/domain/fastfood/application/use-cases/get-product-by-category'
 import { CreateOrderController } from './controllers/create-order.controller'
 import { CreateOrderUseCase } from '@/domain/fastfood/application/use-cases/create-order'
+import { GetAllOrderController } from './controllers/get-all-order.controller'
+import { GetAllOrderUseCase } from '@/domain/fastfood/application/use-cases/get-all-order'
 @Module({
   imports: [DatabaseModule],
   controllers: [
     GetCustomerByCpfController,
     CreateCustomerController,
+    GetProductByCategoryController,
     CreateProductController,
     EditProductController,
     DeleteProductController,
-    GetProductByCategoryController,
+    GetAllOrderController,
     CreateOrderController
   ],
   providers: [
@@ -32,7 +35,8 @@ import { CreateOrderUseCase } from '@/domain/fastfood/application/use-cases/crea
     EditProductUseCase,
     DeleteProductUseCase,
     GetProductByCategoryUseCase,
-    CreateOrderUseCase
+    CreateOrderUseCase,
+    GetAllOrderUseCase
   ]
 })
 export class HttpModule {}

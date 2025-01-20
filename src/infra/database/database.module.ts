@@ -6,6 +6,8 @@ import { ProductRepository } from '@/domain/fastfood/application/repositories/pr
 import { PrismaProductRepository } from './prisma/repositories/prisma-products-repository'
 import { OrderRepository } from '@/domain/fastfood/application/repositories/order-repository'
 import { PrismaOrdersRepository } from './prisma/repositories/prisma-order-repository'
+import { OrderProductsRepository } from '@/domain/fastfood/application/repositories/order-products-repository'
+import { PrismaOrderProductsRepository } from './prisma/repositories/prisma-order-products-repository'
 
 @Module({
   providers: [
@@ -21,13 +23,18 @@ import { PrismaOrdersRepository } from './prisma/repositories/prisma-order-repos
     {
       provide: OrderRepository,
       useClass: PrismaOrdersRepository
+    },
+    {
+      provide: OrderProductsRepository,
+      useClass: PrismaOrderProductsRepository
     }
   ],
   exports: [
     PrismaService,
     CustomerRepository,
     ProductRepository,
-    OrderRepository
+    OrderRepository,
+    OrderProductsRepository
   ]
 })
 export class DatabaseModule {}

@@ -1,8 +1,8 @@
 -- CreateEnum
-CREATE TYPE "ProductCategory" AS ENUM ('SNACK', 'SIDE_DISH', 'DRINK', 'DESSERT');
+CREATE TYPE "ProductCategory" AS ENUM ('Lanche', 'Acompanhamento', 'Bebida', 'Sobremesa');
 
 -- CreateEnum
-CREATE TYPE "OrderStatus" AS ENUM ('RECEIVED', 'IN_PREPARATION', 'READY', 'FINALIZED');
+CREATE TYPE "OrderStatus" AS ENUM ('Recebido', 'Preparação', 'Pronto', 'Finalizado');
 
 -- CreateTable
 CREATE TABLE "customers" (
@@ -10,7 +10,6 @@ CREATE TABLE "customers" (
     "cpf" TEXT,
     "name" TEXT,
     "email" TEXT,
-    "isAnonymous" BOOLEAN NOT NULL DEFAULT true,
 
     CONSTRAINT "customers_pkey" PRIMARY KEY ("id")
 );
@@ -21,8 +20,7 @@ CREATE TABLE "products" (
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "price" DOUBLE PRECISION NOT NULL DEFAULT 0,
-    "category" "ProductCategory" NOT NULL DEFAULT 'SNACK',
-    "orderId" TEXT,
+    "category" "ProductCategory" NOT NULL DEFAULT 'Lanche',
 
     CONSTRAINT "products_pkey" PRIMARY KEY ("id")
 );
@@ -31,7 +29,7 @@ CREATE TABLE "products" (
 CREATE TABLE "orders" (
     "id" TEXT NOT NULL,
     "customer_id" TEXT NOT NULL,
-    "status" "OrderStatus" NOT NULL DEFAULT 'RECEIVED',
+    "status" "OrderStatus" NOT NULL DEFAULT 'Recebido',
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3),
 
@@ -52,9 +50,6 @@ CREATE UNIQUE INDEX "customers_cpf_key" ON "customers"("cpf");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "customers_email_key" ON "customers"("email");
-
--- AddForeignKey
-ALTER TABLE "products" ADD CONSTRAINT "products_orderId_fkey" FOREIGN KEY ("orderId") REFERENCES "orders"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "orders" ADD CONSTRAINT "orders_customer_id_fkey" FOREIGN KEY ("customer_id") REFERENCES "customers"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
