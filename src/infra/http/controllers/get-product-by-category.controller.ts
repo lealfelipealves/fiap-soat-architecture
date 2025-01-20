@@ -1,6 +1,4 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { GetCustomerByCpfUseCase } from '@/domain/fastfood/application/use-cases/get-customer-by-cpf'
-import { CustomerPresenter } from '../presenters/customer-presenter'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger'
 import { GetProductByCategoryUseCase } from '@/domain/fastfood/application/use-cases/get-product-by-category'

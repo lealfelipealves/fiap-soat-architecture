@@ -8,6 +8,16 @@ export default defineConfig({
     globals: true,
     root: './',
     setupFiles: ['./test/setup-e2e.ts'],
+    alias: {
+      '@src': './src',
+      '@test': './test',
+    },
+  },
+  resolve: {
+    alias: {
+      '@src': './src',
+      '@test': './test',
+    },
   },
   plugins: [
     tsConfigPaths(),

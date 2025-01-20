@@ -1,4 +1,4 @@
-import { Body, Controller, HttpCode, Param, Post } from '@nestjs/common'
+import { Body, Controller, HttpCode, Post } from '@nestjs/common'
 import { CreateOrderUseCase } from '@/domain/fastfood/application/use-cases/create-order'
 import { OrderPresenter } from '../presenters/order-presenter'
 

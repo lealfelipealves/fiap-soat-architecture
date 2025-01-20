@@ -1,4 +1,4 @@
-import { Body, Controller, HttpCode, Param, Post, Put } from '@nestjs/common'
+import { Body, Controller, HttpCode, Param, Put } from '@nestjs/common'
 import { CreateCustomerUseCase } from '@/domain/fastfood/application/use-cases/create-customer'
 import { CustomerPresenter } from '../presenters/customer-presenter'
 

@@ -20,8 +20,7 @@ export class GetProductByCategoryUseCase {
   constructor(private productRepository: ProductRepository) {}
 
   async execute({
-    category,
-    page
+    category
   }: GetProductByCategoryUseCaseRequest): Promise<GetProductByCategoryUseCaseResponse> {
     const products = await this.productRepository.findManyByCategory(category)
 

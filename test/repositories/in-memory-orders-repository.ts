@@ -3,7 +3,6 @@ import { Order } from '@/domain/fastfood/enterprise/entities'
 import { InMemoryProductsRepository } from './in-memory-products-repository'
 import { InMemoryOrderProductsRepository } from './in-memory-order-products-repository'
 import { DomainEvents } from '@/core/events/domain-events'
-import { PaginationParams } from '@/core/repositories/pagination-params'
 
 export class InMemoryOrdersRepository implements OrderRepository {
   public items: Order[] = []

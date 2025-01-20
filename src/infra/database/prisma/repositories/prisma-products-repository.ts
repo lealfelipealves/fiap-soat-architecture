@@ -1,7 +1,6 @@
 import { ProductRepository } from '@/domain/fastfood/application/repositories/product-repository'
 import { Injectable } from '@nestjs/common'
 import { PrismaService } from '../prisma.service'
-import { PaginationParams } from '@/core/repositories/pagination-params'
 import { Product } from '@/domain/fastfood/enterprise/entities'
 import { PrismaProductMapper } from '../mappers/prisma-products-mapper'
 import { ProductCategory } from '@prisma/client'

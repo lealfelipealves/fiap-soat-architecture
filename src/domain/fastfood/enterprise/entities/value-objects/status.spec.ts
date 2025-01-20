@@ -26,7 +26,7 @@ describe('Status Value Object', () => {
 
   it('should allow valid status transitions', () => {
     const status = Status.create('Recebido')
-    expect(status.canTransitionTo('Em preparação')).toBe(true)
+    expect(status.canTransitionTo('Preparação')).toBe(true)
   })
 
   it('should not allow invalid status transitions', () => {

@@ -1,4 +1,4 @@
-import { Body, Controller, HttpCode, Param, Post, Put } from '@nestjs/common'
+import { Body, Controller, HttpCode, Param, Put } from '@nestjs/common'
 import { ProductPresenter } from '../presenters/product-presenter'
 
 import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger'

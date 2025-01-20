@@ -1,4 +1,3 @@
-import { PaginationParams } from '@/core/repositories/pagination-params'
 import { Product } from '@/domain/fastfood/enterprise/entities'
 import { ProductRepository } from '@/domain/fastfood/application/repositories/product-repository'
 
