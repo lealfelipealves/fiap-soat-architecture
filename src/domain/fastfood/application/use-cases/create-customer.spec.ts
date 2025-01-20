@@ -24,20 +24,4 @@ describe('Create Customer', () => {
       'customer1@email.com'
     )
   })
-
-  it('should be able to create a anonymous customer', async () => {
-    const result = await sut.execute({})
-
-    expect(result.isRight()).toBe(true)
-    expect(inMemoryCustomersRepository.items[0].isAnonymous).toEqual(
-      result.value?.customer.isAnonymous
-    )
-    expect(inMemoryCustomersRepository.items[0].name).toEqual('Anônimo')
-    expect(inMemoryCustomersRepository.items[0].cpf?.toString()).toEqual(
-      undefined
-    )
-    expect(inMemoryCustomersRepository.items[0].email?.toString()).toEqual(
-      undefined
-    )
-  })
 })

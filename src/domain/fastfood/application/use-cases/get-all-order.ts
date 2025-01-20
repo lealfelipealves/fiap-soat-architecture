@@ -1,7 +1,7 @@
 import { Either, right } from '@/core/either'
-import { Order } from '@/domain/fastfood/enterprise/entities'
 import { OrderRepository } from '../repositories/order-repository'
 import { Injectable } from '@nestjs/common'
+import { Order } from '../../enterprise/entities'
 
 type GetAllOrderUseCaseResponse = Either<
   null,
