@@ -1,6 +1,7 @@
 services:
   app:
     container_name: fastfood-app
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,8 +11,6 @@ services:
       - DATABASE_URL=postgresql://postgres:docker@fastfood-db:5432/fastfood?schema=public
     ports:
       - ${APP_PORT}:${APP_PORT}
-    links:
-      - db
     depends_on:
       - db
     networks:
@@ -29,10 +28,13 @@ services:
     environment:
       - PGDATA=/data/postgres
     volumes:
-      - ./data/pg:/data/postgres
+      - pgdata:/data/postgres
     networks:
       fastfood-network:
         ipv4_address: 172.30.0.20
+
+volumes:
+  pgdata:
 
 networks:
   fastfood-network:
