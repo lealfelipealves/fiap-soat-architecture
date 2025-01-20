@@ -10,9 +10,6 @@ services:
       - DATABASE_URL=postgresql://postgres:docker@fastfood-db:5432/fastfood?schema=public
     ports:
       - ${APP_PORT}:${APP_PORT}
-    volumes:
-      - .:/app
-    command: npm run start:prod
     links:
       - db
     depends_on:
@@ -20,6 +17,7 @@ services:
     networks:
       fastfood-network:
         ipv4_address: 172.30.0.10
+    command: npm run start:prod
   db:
     container_name: fastfood-db
     restart: always
