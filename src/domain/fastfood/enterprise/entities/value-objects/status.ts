@@ -45,7 +45,7 @@ export class Status {
     const transitions: {
       [key in StatusType]: string[]
     } = {
-      Recebido: ['Em preparação'],
+      Recebido: ['Preparação'],
       Preparação: ['Pronto'],
       Pronto: ['Finalizado'],
       Finalizado: []

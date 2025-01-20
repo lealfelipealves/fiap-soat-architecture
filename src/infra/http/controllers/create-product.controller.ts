@@ -1,14 +1,8 @@
-import { Body, Controller, HttpCode, Param, Post } from '@nestjs/common'
+import { Body, Controller, HttpCode, Post } from '@nestjs/common'
 import { CreateProductUseCase } from '@/domain/fastfood/application/use-cases/create-product'
 import { ProductPresenter } from '../presenters/product-presenter'
 
-import {
-  ApiBearerAuth,
-  ApiBody,
-  ApiOperation,
-  ApiResponse,
-  ApiTags
-} from '@nestjs/swagger'
+import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { z } from 'zod'
 import { ZodValidationPipe } from '@/infra/http/pipes/zod-validation-pipe'

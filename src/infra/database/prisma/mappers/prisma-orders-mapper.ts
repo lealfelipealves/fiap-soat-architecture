@@ -16,14 +16,10 @@ export class PrismaOrdersMapper {
     )
   }
 
-  static toPrisma(order: Order): Prisma.OrderCreateInput {
+  static toPrisma(order: Order): Prisma.OrderUncheckedCreateInput {
     return {
       id: order.id.toString(),
-      customer: {
-        connect: {
-          id: order.customerId.toString()
-        }
-      },
+      customerId: order.customerId.toString(),
       status: order.status.toString() as OrderStatus,
       createdAt: order.createdAt,
       updatedAt: order.updatedAt

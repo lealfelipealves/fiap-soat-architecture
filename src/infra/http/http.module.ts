@@ -12,6 +12,8 @@ import { EditProductController } from './controllers/edit-product.controller'
 import { DeleteProductController } from './controllers/delete-product.controller'
 import { GetProductByCategoryController } from './controllers/get-product-by-category.controller'
 import { GetProductByCategoryUseCase } from '@/domain/fastfood/application/use-cases/get-product-by-category'
+import { CreateOrderController } from './controllers/create-order.controller'
+import { CreateOrderUseCase } from '@/domain/fastfood/application/use-cases/create-order'
 @Module({
   imports: [DatabaseModule],
   controllers: [
@@ -20,7 +22,8 @@ import { GetProductByCategoryUseCase } from '@/domain/fastfood/application/use-c
     CreateProductController,
     EditProductController,
     DeleteProductController,
-    GetProductByCategoryController
+    GetProductByCategoryController,
+    CreateOrderController
   ],
   providers: [
     GetCustomerByCpfUseCase,
@@ -28,7 +31,8 @@ import { GetProductByCategoryUseCase } from '@/domain/fastfood/application/use-c
     CreateProductUseCase,
     EditProductUseCase,
     DeleteProductUseCase,
-    GetProductByCategoryUseCase
+    GetProductByCategoryUseCase,
+    CreateOrderUseCase
   ]
 })
 export class HttpModule {}

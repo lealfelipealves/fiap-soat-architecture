@@ -2,17 +2,10 @@ import { Body, Controller, HttpCode, Param, Post } from '@nestjs/common'
 import { CreateCustomerUseCase } from '@/domain/fastfood/application/use-cases/create-customer'
 import { CustomerPresenter } from '../presenters/customer-presenter'
 
-import {
-  ApiBearerAuth,
-  ApiBody,
-  ApiOperation,
-  ApiResponse,
-  ApiTags
-} from '@nestjs/swagger'
+import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { z } from 'zod'
 import { ZodValidationPipe } from '@/infra/http/pipes/zod-validation-pipe'
-import { Customer } from '@/domain/fastfood/enterprise/entities'
 
 const createCustomerBodySchema = z.object({
   name: z.string(),
