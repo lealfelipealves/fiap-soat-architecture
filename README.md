@@ -16,6 +16,12 @@ Clone o repositorio para seu ambiente
 $ git clone git@github.com:lealfelipealves/fiap-soat-architecture.git
 ```
 
+Acesse o repositorio
+
+```bash
+$ cd fiap-soat-architecture.git
+```
+
 Copie o arquivo .env.example para .env
 
 ```bash
