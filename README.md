@@ -20,9 +20,9 @@ Este projeto é parte do **Software Architecture Tech Challenge - Fase 1**. Ele 
 
 ## 🌐 Recursos Adicionais
 
-- Documentação do NestJS
-- Prisma ORM
-- Docker Documentation
+- [Documentação do NestJS](https://docs.nestjs.com/)
+- [Prisma ORM](https://www.prisma.io/docs/orm)
+- [Docker Documentation](https://docs.docker.com/)
 
 ## 🎥 Demo
 
