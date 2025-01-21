@@ -59,6 +59,7 @@ Para acessar a documentação do swagger
 ```bash
 http://localhost:3333/docs
 ```
+![image](https://github.com/user-attachments/assets/2186718b-0ab3-4af1-8267-1514fe908153)
 
 ## ▶️ Executar o projeto
 
