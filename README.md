@@ -1,38 +1,38 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <img src="https://github.com/user-attachments/assets/5016809a-9f26-4624-b1ce-1fc191482fb9" width="420" alt="Fiap + Alura" />
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<p align="center">Software Architecture Tech Challenge - Fase 1</p>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 📄 Descrição
+Este projeto é parte do **Software Architecture Tech Challenge - Fase 1**. Ele engloba o desenvolvimento de uma aplicação backend monolítica utilizando **NestJS** e seguindo boas práticas de **DDD (Domain-Driven Design)**, **Arquitetura Hexagonal** e **Docker** para uma implementação robusta e escalável.
 
-## Description
+## 🚀 Instruções para Instalação
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Subir o ambiente completo:
+```bash
+$ docker-compose up -d
+```
 
-## Project setup
-
+Instalar dependências:
 ```bash
 $ npm install
 ```
 
-## Compile and run the project
+Aplicar migrações do Prisma na base de dados:
+```bash
+$ npx prisma migrate deploy
+```
+
+Popular a base com dados iniciais (Seed):
+```bash
+$ npx prisma db seed
+```
+
+[Link para acessar o swagger](http://localhost:3333/docs)
+
+
+## ▶️ Executar o projeto
 
 ```bash
 # development
@@ -45,7 +45,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Run tests
+## 🧪 Testes
 
 ```bash
 # unit tests
@@ -58,42 +58,94 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Deployment
+### 🛠 Tecnologias Utilizadas
+- Node.js
+- NestJS
+- Prisma ORM
+- Docker e Docker Compose
+- PostgreSQL
+- Swagger (Documentação de APIs)
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+### 🌐 Recursos Adicionais
+- Documentação do NestJS
+- Prisma ORM
+- Docker Documentation
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+## Entregáveis FASE 1:
+<ol type="1">
+  <li>
+    Documentação do sistema (DDD) com Event Storming, incluindo todos os
+    passos/tipos de diagrama mostrados na aula 6 do módulo de DDD, e utilizando
+    a linguagem ubíqua, dos seguintes fluxos:
+    <ol type="a">
+      <li>Realização do pedido e pagamento;</li>
+      <li>Preparação e entrega do pedido.</li>
+    </ol>
+    É importante que os desenhos sigam os padrões utilizados na explicação.
+  </li>
+  <li>
+    <p>
+      Uma aplicação para todo o sistema de backend (monolito) que deverá ser
+      desenvolvido seguindo os padrões apresentados nas aulas:
+    </p>
+    <ol>
+      <li>Utilizando arquitetura hexagonal</li>
+      <li>
+        APIs:
+        <ol>
+          <li>Cadastro do Cliente;</li>
+          <li>Identificação do Cliente via CPF;</li>
+          <li>Criar, editar e remover produtos;</li>
+          <li>Buscar produtos por categoria;</li>
+          <li>
+            Fake checkout, apenas enviar os produtos escolhidos para a fila. O
+            checkout é a finalização do pedido;
+          </li>
+          <li>Listar os pedidos.</li>
+        </ol>
+        <p>Disponibilizar também o Swagger para consumo dessas APIs</p>
+      </li>
+      <li>
+        <p>Banco de dados à sua escolha</p>
+        <ol>
+          <li>
+            Inicialmente deveremos trabalhar e organizar a fila dos pedidos
+            apenas em banco de dados
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    A aplicação deve ser entregue com um Dockerfile configurado para executá-la
+    corretamente, e um docker-compose.yml para subir o ambiente completo. É
+    muito importante seguir boas práticas de segurança e melhorias para que a
+    inicialização seja feita de forma rápida.
+  </li>
+  <li>
+    <p>Para validação da POC, temos a seguinte limitação de infraestrutura:</p>
+    <ol>
+      <li>1 instância para banco de dados;</li>
+      <li>1 instâncias para executar aplicação;</li>
+      <li>Obrigatório utilizar no mínimo um Dockerfile.</li>
+    </ol>
+  </li>
+  <li>
+    Link para vídeo demonstrando a arquitetura desenvolvida localmente.
+    <ol>
+      <li>
+        O vídeo deve ser postado no Youtube, Vimeo ou compartilhado via Google
+        Drive/One Drive.
+      </li>
+      <li>Não esqueça de deixá-lo público ou não listado.</li>
+      <li>
+        O vídeo de demonstração sobre a execução da aplicação e banco através do
+        Docker Compose, deve conter informações relevantes sobre o projeto e
+        quais passos são necessários para que a aplicação funcione.
+      </li>
+    </ol>
+  </li>
+</ol>
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## 📊 Diagrama:
+![ddd](https://github.com/user-attachments/assets/1b5ee2fe-113a-44c2-a68a-c904e79b5f02)
