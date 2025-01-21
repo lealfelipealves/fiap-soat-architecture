@@ -11,13 +11,15 @@ Este projeto é parte do **Software Architecture Tech Challenge - Fase 1**. Ele 
 
 ## 🚀 Instruções para Instalação
 
+<video src="docs/video_setup.mp4" controls width="100%"></video>
+
 Clone o repositorio para seu ambiente
 
 ```bash
 git clone git@github.com:lealfelipealves/fiap-soat-architecture.git
 ```
 
-Acesse o repositorio
+Acesse o repositório
 
 ```bash
 cd fiap-soat-architecture/
