@@ -12,8 +12,10 @@ async function bootstrap() {
   const port = configService.get('APP_PORT')
 
   const config = new DocumentBuilder()
-    .setTitle('Fastfood')
-    .setDescription('The fastfood API - FIAP Tech Challenge - FASE 01')
+    .setTitle('Fast food API')
+    .setDescription(
+      'FIAP - Software Architecture - Tech Challenge - FASE 01<br>Grupo 30 - Felipe Alves Leal<br> Sistema de fast food API '
+    )
     .setVersion('1.0')
     .build()
   const documentFactory = () => SwaggerModule.createDocument(app, config)

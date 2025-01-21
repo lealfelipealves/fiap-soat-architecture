@@ -5,13 +5,15 @@ import { GetProductByCategoryUseCase } from '@/domain/fastfood/application/use-c
 import { ProductPresenter } from '../presenters/product-presenter'
 import { Category } from '@/domain/fastfood/enterprise/entities/value-objects'
 
-@ApiTags('Products')
+@ApiTags('Produtos')
 @Controller('/products/:category')
 export class GetProductByCategoryController {
   constructor(private getProductByCategory: GetProductByCategoryUseCase) {}
 
   @Get()
-  @ApiOperation({ summary: 'Get Product by Category' })
+  @ApiOperation({
+    summary: 'Buscar produtos por categoria'
+  })
   @ApiParam({
     name: 'category',
     type: 'string',

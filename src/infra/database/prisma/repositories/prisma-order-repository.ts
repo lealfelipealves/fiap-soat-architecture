@@ -22,12 +22,43 @@ export class PrismaOrdersRepository implements OrderRepository {
     return orders.map(PrismaOrdersMapper.toDomain)
   }
 
+  async findById(id: string): Promise<Order | null> {
+    const order = await this.prisma.order.findUnique({
+      where: {
+        id
+      }
+    })
+
+    if (!order) {
+      return null
+    }
+
+    return PrismaOrdersMapper.toDomain(order)
+  }
+
   async create(order: Order): Promise<void> {
     const data = PrismaOrdersMapper.toPrisma(order)
 
     await this.prisma.order.create({
       data
     })
+
+    await this.orderProductRepository.createMany(order.products.getItems())
+
+    DomainEvents.dispatchEventsForAggregate(order.id)
+  }
+
+  async save(order: Order): Promise<void> {
+    const data = PrismaOrdersMapper.toPrisma(order)
+
+    await this.prisma.order.update({
+      where: {
+        id: order.id.toString()
+      },
+      data
+    })
+
+    await this.orderProductRepository.deleteMany(order.products.getItems())
 
     await this.orderProductRepository.createMany(order.products.getItems())
 

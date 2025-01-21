@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">Software Architecture Tech Challenge - Fase 1</p>
+<p align="center">Grupo 30 - Felipe Alves Leal</p>
 
 ## 📄 Descrição
 
@@ -47,7 +48,15 @@ $ npm install;
 $ npx prisma db seed;
 ```
 
-[Link para acessar o swagger: localhost:3333/docs](http://localhost:3333/docs)
+## 📖 Swagger
+
+Para acessar a documentação do swagger
+
+<a href="http://localhost:3333/docs" target="_blank">Link para acessar o swagger localmente</a>
+
+```bash
+http://localhost:3333/docs
+```
 
 ## ▶️ Executar o projeto
 
@@ -102,6 +111,16 @@ $ npm run test:cov
       <li>Preparação e entrega do pedido.</li>
     </ol>
     É importante que os desenhos sigam os padrões utilizados na explicação.
+    <ul>
+      <li>
+        <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/event-storming-felipe-leal-grupo-30.drawio" target="_blank">
+        Diagrama completo em draw.io</a>
+      </li>
+      <li>
+        <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/event-storming-felipe-leal-grupo-30.pdf" target="_blank">
+        Diagrama completo em pdf</a>
+      </li>
+    </ul>
   </li>
   <li>
     <p>
@@ -123,7 +142,7 @@ $ npm run test:cov
           </li>
           <li>Listar os pedidos.</li>
         </ol>
-        <p>Disponibilizar também o Swagger para consumo dessas APIs</p>
+        <p>Disponibilizar também o Swagger para consumo dessas APIs <a href="http://localhost:3333/docs" target="_blank">link para acessar o swagger localmente: localhost:3333/docs</a></p>        
       </li>
       <li>
         <p>Banco de dados à sua escolha</p>
@@ -168,6 +187,17 @@ $ npm run test:cov
 </ol>
 
 ## 📊 Diagrama:
+
+<ul>
+  <li>
+    <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/event-storming-felipe-leal-grupo-30.drawio" target="_blank">
+    Diagrama completo em draw.io</a>
+  </li>
+  <li>
+    <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/event-storming-felipe-leal-grupo-30.pdf" target="_blank">
+    Diagrama completo em pdf</a>
+  </li>
+</ul>
 
 ![ddd](https://github.com/user-attachments/assets/1b5ee2fe-113a-44c2-a68a-c904e79b5f02)
 

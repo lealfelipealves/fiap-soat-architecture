@@ -11,7 +11,24 @@ import { Category } from '@/domain/fastfood/enterprise/entities/value-objects'
 const createProductBodySchema = z.object({
   name: z.string(),
   description: z.string(),
-  price: z.number(),
+  price: z.preprocess(
+    (val) =>
+      typeof val === 'string' || typeof val === 'number' ? Number(val) : val,
+    z
+      .number()
+      .default(0)
+      .refine(
+        (val) => {
+          // Permitir números com até duas casas decimais
+          const isValid = !isNaN(val) && Math.floor(val * 100) === val * 100
+          return isValid
+        },
+        {
+          message:
+            'O preço deve ser um número válido com até duas casas decimais.'
+        }
+      )
+  ),
   category: z
     .string()
     .refine(
@@ -28,14 +45,16 @@ const bodyValidationPipe = new ZodValidationPipe(createProductBodySchema)
 
 type CreateProductBodySchema = z.infer<typeof createProductBodySchema>
 
-@ApiTags('Products')
+@ApiTags('Produtos')
 @Controller('/products')
 export class CreateProductController {
   constructor(private createProduct: CreateProductUseCase) {}
 
   @Post()
   @HttpCode(201)
-  @ApiOperation({ summary: 'Create product' })
+  @ApiOperation({
+    summary: 'Criar um novo produto'
+  })
   @ApiBody({
     schema: {
       type: 'object',

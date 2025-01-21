@@ -30,14 +30,16 @@ const bodyValidationPipe = new ZodValidationPipe(createOrderBodySchema)
 
 type CreateOrderBodySchema = z.infer<typeof createOrderBodySchema>
 
-@ApiTags('Orders')
+@ApiTags('Pedidos')
 @Controller('/orders')
 export class CreateOrderController {
   constructor(private createOrder: CreateOrderUseCase) {}
 
   @Post()
   @HttpCode(201)
-  @ApiOperation({ summary: 'Create order' })
+  @ApiOperation({
+    summary: 'Enviar os produtos escolhidos para a fila'
+  })
   @ApiBody({
     schema: {
       type: 'object',

@@ -4,13 +4,15 @@ import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-e
 import { GetAllOrderUseCase } from '@/domain/fastfood/application/use-cases/get-all-order'
 import { OrderPresenter } from '../presenters/order-presenter'
 
-@ApiTags('Orders')
+@ApiTags('Pedidos')
 @Controller('/orders')
 export class GetAllOrderController {
   constructor(private getAllOrder: GetAllOrderUseCase) {}
 
   @Get()
-  @ApiOperation({ summary: 'Get All Order' })
+  @ApiOperation({
+    summary: 'Listar os pedidos'
+  })
   async handle() {
     const result = await this.getAllOrder.execute()
 

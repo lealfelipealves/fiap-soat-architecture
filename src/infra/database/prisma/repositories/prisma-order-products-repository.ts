@@ -23,30 +23,28 @@ export class PrismaOrderProductsRepository implements OrderProductsRepository {
       return
     }
 
-    console.log('products', products)
-
     await this.prisma.orderProduct.createMany({
       data: PrismaOrderProductMapper.toPrisma(products).data
     })
   }
 
-  // async deleteMany(products: OrderProduct[]): Promise<void> {
-  //   if (products.length === 0) {
-  //     return
-  //   }
+  async deleteMany(products: OrderProduct[]): Promise<void> {
+    if (products.length === 0) {
+      return
+    }
 
-  //   const productsIds = products.map((product) => {
-  //     return product.id.toString()
-  //   })
+    const productsIds = products.map((product) => {
+      return product.id.toString()
+    })
 
-  //   await this.prisma.product.deleteMany({
-  //     where: {
-  //       id: {
-  //         in: productsIds
-  //       }
-  //     }
-  //   })
-  // }
+    await this.prisma.product.deleteMany({
+      where: {
+        id: {
+          in: productsIds
+        }
+      }
+    })
+  }
 
   // async deleteManyByOrderId(orderId: string): Promise<void> {
   //   await this.prisma.product.deleteMany({

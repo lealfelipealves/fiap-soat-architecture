@@ -16,7 +16,7 @@ const bodyValidationPipe = new ZodValidationPipe(createCustomerBodySchema)
 
 type CreateCustomerBodySchema = z.infer<typeof createCustomerBodySchema>
 
-@ApiTags('Customers')
+@ApiTags('Clientes')
 @Controller('/customers/:cpf')
 export class CompleteCustomerDataController {
   constructor(private createCustomer: CreateCustomerUseCase) {}

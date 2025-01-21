@@ -11,18 +11,32 @@ import { Category } from '@/domain/fastfood/enterprise/entities/value-objects'
 const editProductBodySchema = z.object({
   name: z.string().optional(),
   description: z.string().optional(),
-  price: z
-    .string()
-    .optional()
-    .default('0')
-    .transform((val) => parseFloat(val))
-    .refine((val) => !isNaN(val) && val.toString().split('.')[1]?.length <= 2, {
-      message: 'O preço deve ser um número válido com até duas casas decimais.'
-    }),
+  price: z.preprocess(
+    (val) =>
+      typeof val === 'string' || typeof val === 'number' ? String(val) : val,
+    z
+      .string()
+      .default('0')
+      .transform((val) => parseFloat(val))
+      .refine(
+        (val) => {
+          // Permitir números inteiros ou com até duas casas decimais
+          if (isNaN(val)) return false
+          const decimalPart = val.toString().split('.')[1]
+          return !decimalPart || decimalPart.length <= 2
+        },
+        {
+          message:
+            'O preço deve ser um número válido com até duas casas decimais.'
+        }
+      )
+  ),
   category: z
     .string()
+    .optional() // Torna o campo opcional
     .refine(
       (val) =>
+        val === undefined ||
         ['Lanche', 'Acompanhamento', 'Bebida', 'Sobremesa'].includes(val),
       {
         message:
@@ -35,14 +49,16 @@ const bodyValidationPipe = new ZodValidationPipe(editProductBodySchema)
 
 type EditProductBodySchema = z.infer<typeof editProductBodySchema>
 
-@ApiTags('Products')
+@ApiTags('Produtos')
 @Controller('/products/:id')
 export class EditProductController {
   constructor(private editProduct: EditProductUseCase) {}
 
   @Put()
   @HttpCode(204)
-  @ApiOperation({ summary: 'Edit product' })
+  @ApiOperation({
+    summary: 'Editar um produto'
+  })
   @ApiBody({
     schema: {
       type: 'object',

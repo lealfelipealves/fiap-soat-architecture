@@ -16,6 +16,8 @@ import { CreateOrderController } from './controllers/create-order.controller'
 import { CreateOrderUseCase } from '@/domain/fastfood/application/use-cases/create-order'
 import { GetAllOrderController } from './controllers/get-all-order.controller'
 import { GetAllOrderUseCase } from '@/domain/fastfood/application/use-cases/get-all-order'
+import { CheckoutOrderController } from './controllers/checkout-order.controller'
+import { CheckoutOrderUseCase } from '@/domain/fastfood/application/use-cases/checkout-order'
 @Module({
   imports: [DatabaseModule],
   controllers: [
@@ -26,7 +28,8 @@ import { GetAllOrderUseCase } from '@/domain/fastfood/application/use-cases/get-
     EditProductController,
     DeleteProductController,
     GetAllOrderController,
-    CreateOrderController
+    CreateOrderController,
+    CheckoutOrderController
   ],
   providers: [
     GetCustomerByCpfUseCase,
@@ -35,8 +38,9 @@ import { GetAllOrderUseCase } from '@/domain/fastfood/application/use-cases/get-
     EditProductUseCase,
     DeleteProductUseCase,
     GetProductByCategoryUseCase,
+    GetAllOrderUseCase,
     CreateOrderUseCase,
-    GetAllOrderUseCase
+    CheckoutOrderUseCase
   ]
 })
 export class HttpModule {}
