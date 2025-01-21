@@ -9,9 +9,26 @@
 
 Este projeto é parte do **Software Architecture Tech Challenge - Fase 1**. Ele engloba o desenvolvimento de uma aplicação backend monolítica utilizando **NestJS** e seguindo boas práticas de **DDD (Domain-Driven Design)**, **Arquitetura Hexagonal** e **Docker** para uma implementação robusta e escalável.
 
-## 🚀 Instruções para Instalação
+## 🛠 Tecnologias Utilizadas
+
+- Node.js (>=20)
+- NestJS
+- Prisma ORM
+- Docker e Docker Compose
+- PostgreSQL
+- Swagger (Documentação de APIs)
+
+## 🌐 Recursos Adicionais
+
+- Documentação do NestJS
+- Prisma ORM
+- Docker Documentation
+
+## 🎥 Demo
 
 [![Video demonstração](https://img.youtube.com/vi/zvsGC-gbdC8/0.jpg)](https://www.youtube.com/watch?v=zvsGC-gbdC8)
+
+## 🚀 Instruções para Instalação
 
 Clone o repositorio para seu ambiente
 
@@ -86,21 +103,6 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-### 🛠 Tecnologias Utilizadas
-
-- Node.js
-- NestJS
-- Prisma ORM
-- Docker e Docker Compose
-- PostgreSQL
-- Swagger (Documentação de APIs)
-
-### 🌐 Recursos Adicionais
-
-- Documentação do NestJS
-- Prisma ORM
-- Docker Documentation
 
 ## Entregáveis FASE 1:
 
