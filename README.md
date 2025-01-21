@@ -19,7 +19,7 @@ $ git clone git@github.com:lealfelipealves/fiap-soat-architecture.git
 Acesse o repositorio
 
 ```bash
-$ cd fiap-soat-architecture.git
+$ cd fiap-soat-architecture/
 ```
 
 Copie o arquivo .env.example para .env
