@@ -5,32 +5,36 @@
 <p align="center">Software Architecture Tech Challenge - Fase 1</p>
 
 ## 📄 Descrição
+
 Este projeto é parte do **Software Architecture Tech Challenge - Fase 1**. Ele engloba o desenvolvimento de uma aplicação backend monolítica utilizando **NestJS** e seguindo boas práticas de **DDD (Domain-Driven Design)**, **Arquitetura Hexagonal** e **Docker** para uma implementação robusta e escalável.
 
 ## 🚀 Instruções para Instalação
 
+Copie o arquivo .env.example para .env
+
+```bash
+cp .env.example .env
+```
+
 Subir o ambiente completo:
+
 ```bash
 $ docker-compose up -d
 ```
 
-Instalar dependências:
-```bash
-$ npm install
-```
-
 Aplicar migrações do Prisma na base de dados:
+
 ```bash
 $ npx prisma migrate deploy
 ```
 
 Popular a base com dados iniciais (Seed):
+
 ```bash
 $ npx prisma db seed
 ```
 
-[Link para acessar o swagger](http://localhost:3333/docs)
-
+[Link para acessar o swagger: localhost:3333/docs](http://localhost:3333/docs)
 
 ## ▶️ Executar o projeto
 
@@ -59,6 +63,7 @@ $ npm run test:cov
 ```
 
 ### 🛠 Tecnologias Utilizadas
+
 - Node.js
 - NestJS
 - Prisma ORM
@@ -67,11 +72,13 @@ $ npm run test:cov
 - Swagger (Documentação de APIs)
 
 ### 🌐 Recursos Adicionais
+
 - Documentação do NestJS
 - Prisma ORM
 - Docker Documentation
 
 ## Entregáveis FASE 1:
+
 <ol type="1">
   <li>
     Documentação do sistema (DDD) com Event Storming, incluindo todos os
@@ -148,4 +155,18 @@ $ npm run test:cov
 </ol>
 
 ## 📊 Diagrama:
+
 ![ddd](https://github.com/user-attachments/assets/1b5ee2fe-113a-44c2-a68a-c904e79b5f02)
+
+### Autor
+
+---
+
+<a href="https://github.com/lealfelipealves">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/17007124?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Felipe Leal</b></sub></a> <a href="https://github.com/lealfelipealves" title="Felipe Leal Profile">🚀</a>
+
+Feito por Felipe Leal 👋🏽
+
+[![Gmail Badge](https://img.shields.io/badge/-contato@felipeleal.eng.br-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:contato@felipeleal.eng.br)](mailto:contato@felipeleal.eng.br)
