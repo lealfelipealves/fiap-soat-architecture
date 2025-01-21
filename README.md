@@ -14,38 +14,38 @@ Este projeto é parte do **Software Architecture Tech Challenge - Fase 1**. Ele 
 Clone o repositorio para seu ambiente
 
 ```bash
-$ git clone git@github.com:lealfelipealves/fiap-soat-architecture.git
+git clone git@github.com:lealfelipealves/fiap-soat-architecture.git
 ```
 
 Acesse o repositorio
 
 ```bash
-$ cd fiap-soat-architecture/
+cd fiap-soat-architecture/
 ```
 
 Copie o arquivo .env.example para .env
 
 ```bash
-$ cp .env.example .env
+cp .env.example .env
 ```
 
 Subir o ambiente completo:
 
 ```bash
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 Aplicar migrações do Prisma na base de dados:
 
 ```bash
-$ npx prisma migrate deploy
+npx prisma migrate deploy
 ```
 
 Popular a base com dados iniciais (Seed):
 
 ```bash
-$ npm install;
-$ npx prisma db seed;
+npm install;
+npx prisma db seed;
 ```
 
 ## 📖 Swagger
