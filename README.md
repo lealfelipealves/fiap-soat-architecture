@@ -10,10 +10,16 @@ Este projeto é parte do **Software Architecture Tech Challenge - Fase 1**. Ele 
 
 ## 🚀 Instruções para Instalação
 
+Clone o repositorio para seu ambiente
+
+```bash
+$ git clone git@github.com:lealfelipealves/fiap-soat-architecture.git
+```
+
 Copie o arquivo .env.example para .env
 
 ```bash
-cp .env.example .env
+$ cp .env.example .env
 ```
 
 Subir o ambiente completo:
