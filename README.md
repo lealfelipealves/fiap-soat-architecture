@@ -11,7 +11,7 @@ Este projeto é parte do **Software Architecture Tech Challenge - Fase 1**. Ele 
 
 ## 🚀 Instruções para Instalação
 
-<video src="docs/video_setup.mp4" controls width="100%"></video>
+[![Video demonstração](https://img.youtube.com/vi/zvsGC-gbdC8/0.jpg)](https://www.youtube.com/watch?v=zvsGC-gbdC8)
 
 Clone o repositorio para seu ambiente
 
