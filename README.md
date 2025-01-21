@@ -191,7 +191,7 @@ $ npm run test:cov
   </li>
 </ol>
 
-## 📊 Diagrama:
+## 📊 Event Storming:
 
 <ul>
   <li>
