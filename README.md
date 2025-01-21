@@ -43,7 +43,8 @@ $ npx prisma migrate deploy
 Popular a base com dados iniciais (Seed):
 
 ```bash
-$ npx prisma db seed
+$ npm install;
+$ npx prisma db seed;
 ```
 
 [Link para acessar o swagger: localhost:3333/docs](http://localhost:3333/docs)
