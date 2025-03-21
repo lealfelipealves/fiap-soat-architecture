@@ -3,6 +3,7 @@ import { AggregateRoot } from '@/core/entities/aggregate-root'
 import { Optional } from '@/core/types/optional'
 import { Status } from './value-objects'
 import { OrderProductList } from './order-product-list'
+import { PaymentStatus } from './value-objects/payment-status'
 
 export interface OrderProps {
   customerId: UniqueEntityID
@@ -10,6 +11,9 @@ export interface OrderProps {
   status: Status
   createdAt: Date
   updatedAt?: Date | null
+  paymentId?: string
+  paymentStatus?: PaymentStatus
+  total?: number
 }
 
 export class Order extends AggregateRoot<OrderProps> {
@@ -37,6 +41,33 @@ export class Order extends AggregateRoot<OrderProps> {
 
   set status(status: Status) {
     this.props.status = status
+    this.touch()
+  }
+
+  get paymentId() {
+    return this.props.paymentId
+  }
+
+  set paymentId(paymentId: string | undefined) {
+    this.props.paymentId = paymentId
+    this.touch()
+  }
+
+  get paymentStatus() {
+    return this.props.paymentStatus
+  }
+
+  set paymentStatus(paymentStatus: PaymentStatus | undefined) {
+    this.props.paymentStatus = paymentStatus
+    this.touch()
+  }
+
+  get total() {
+    return this.props.total
+  }
+
+  set total(total: number | undefined) {
+    this.props.total = total
     this.touch()
   }
 

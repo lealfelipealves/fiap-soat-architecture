@@ -13,13 +13,39 @@ export class PrismaOrdersRepository implements OrderRepository {
   ) {}
 
   async getAll(): Promise<Order[]> {
-    const orders = await this.prisma.order.findMany()
+    const orders = await this.prisma.order.findMany({
+      where: {
+        status: {
+          not: 'Finalizado'
+        }
+      },
+      orderBy: {
+        createdAt: 'desc'
+      }
+    })
 
     if (!orders) {
       return []
     }
 
-    return orders.map(PrismaOrdersMapper.toDomain)
+    const statusOrder = ['Pronto', 'Preparação', 'Recebido']
+
+    const sortedOrders = orders
+      .filter((order) => statusOrder.includes(order.status))
+      .sort((a, b) => {
+        const statusA = statusOrder.indexOf(a.status)
+        const statusB = statusOrder.indexOf(b.status)
+
+        if (statusA === statusB) {
+          return (
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+          )
+        }
+
+        return statusA - statusB
+      })
+
+    return sortedOrders.map(PrismaOrdersMapper.toDomain)
   }
 
   async findById(id: string): Promise<Order | null> {

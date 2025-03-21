@@ -27,23 +27,4 @@ export class PrismaOrderProductMapper {
       }))
     }
   }
-
-  // static toPrismaUpdateMany(
-  //   products: OrderProduct[]
-  // ): Prisma.OrderProductUpdateManyArgs {
-  //   const productIds = products.map((product) => {
-  //     return product.productId.toString()
-  //   })
-
-  //   return {
-  //     where: {
-  //       id: {
-  //         in: productIds
-  //       }
-  //     },
-  //     data: {
-  //       orderId: products[0].orderId.toString()
-  //     }
-  //   }
-  // }
 }

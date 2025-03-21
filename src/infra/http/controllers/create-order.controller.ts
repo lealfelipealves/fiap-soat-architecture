@@ -12,20 +12,6 @@ const createOrderBodySchema = z.object({
   productIds: z.array(z.string().uuid())
 })
 
-// const createOrderBodySchema = z.object({
-//   customerId: z.string().uuid(),
-//   productIds: z.array(z.string().uuid()),
-//   status: z
-//     .string()
-//     .refine(
-//       (val) => ['Recebido', 'Preparação', 'Pronto', 'Finalizado'].includes(val),
-//       {
-//         message:
-//           'Status inválido. As opções válidas são: Recebido, Preparação, Pronto, Finalizado.'
-//       }
-//     )
-// })
-
 const bodyValidationPipe = new ZodValidationPipe(createOrderBodySchema)
 
 type CreateOrderBodySchema = z.infer<typeof createOrderBodySchema>

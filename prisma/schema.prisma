@@ -22,6 +22,12 @@ enum OrderStatus {
   Finalizado
 }
 
+enum PaymentStatus {
+  Aprovado
+  Pendente
+  Recusado
+}
+
 model Customer {
   id    String  @id @default(uuid())
   cpf   String? @unique
@@ -44,11 +50,14 @@ model Product {
 }
 
 model Order {
-  id         String      @id @default(uuid())
-  customerId String      @map("customer_id")
-  status     OrderStatus @default(Recebido)
-  createdAt  DateTime    @default(now()) @map("created_at")
-  updatedAt  DateTime?   @updatedAt @map("updated_at")
+  id            String        @id @default(uuid())
+  customerId    String        @map("customer_id")
+  status        OrderStatus   @default(Recebido)
+  createdAt     DateTime      @default(now()) @map("created_at")
+  updatedAt     DateTime?     @updatedAt @map("updated_at")
+  total         Float         @default(0)
+  paymentStatus PaymentStatus @default(Pendente) @map("payment_status")
+  paymentId     String?       @map("payment_id")
 
   customer     Customer       @relation(fields: [customerId], references: [id])
   OrderProduct OrderProduct[]
