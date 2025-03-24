@@ -76,6 +76,7 @@ Para acessar a documentação do swagger
 ```bash
 http://localhost:3333/docs
 ```
+
 ![image](https://github.com/user-attachments/assets/2186718b-0ab3-4af1-8267-1514fe908153)
 
 ## ▶️ Executar o projeto
@@ -205,6 +206,20 @@ $ npm run test:cov
 </ul>
 
 ![ddd](https://github.com/user-attachments/assets/1b5ee2fe-113a-44c2-a68a-c904e79b5f02)
+
+## Fase 2
+
+kubectl apply -f k8s/
+
+```bash
+$ minikube start
+
+$ kubectl apply -f k8s/
+
+$ kubectl get pods && kubectl get hpa
+
+$ kubectl run fortio --rm -i --tty --image=fortio/fortio -- load -qps 800 -t 60s -c 100 "http://fastfood-service/orders"
+```
 
 ### Autor
 
