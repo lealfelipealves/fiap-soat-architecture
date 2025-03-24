@@ -2,12 +2,12 @@
   <img src="https://github.com/user-attachments/assets/5016809a-9f26-4624-b1ce-1fc191482fb9" width="420" alt="Fiap + Alura" />
 </p>
 
-<p align="center">Software Architecture Tech Challenge - Fase 1</p>
+<p align="center">Software Architecture Tech Challenge - Fase 2</p>
 <p align="center">Grupo 30 - Felipe Alves Leal</p>
 
 ## 📄 Descrição
 
-Este projeto é parte do **Software Architecture Tech Challenge - Fase 1**. Ele engloba o desenvolvimento de uma aplicação backend monolítica utilizando **NestJS** e seguindo boas práticas de **DDD (Domain-Driven Design)**, **Arquitetura Hexagonal** e **Docker** para uma implementação robusta e escalável.
+Este projeto é parte do **Software Architecture Tech Challenge - Fase 2**. Ele engloba o desenvolvimento de uma aplicação backend monolítica utilizando **NestJS** e seguindo boas práticas de **DDD (Domain-Driven Design)**, **Clean Code e Clean Architecture:**, **Docker**, **Kubernetes** para uma implementação robusta e escalável.
 
 ## 🛠 Tecnologias Utilizadas
 
@@ -17,6 +17,9 @@ Este projeto é parte do **Software Architecture Tech Challenge - Fase 1**. Ele 
 - Docker e Docker Compose
 - PostgreSQL
 - Swagger (Documentação de APIs)
+- Clean Code
+- Clean Architecture
+- Kubernetes
 
 ## 🌐 Recursos Adicionais
 
@@ -92,124 +95,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## 🧪 Testes
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Entregáveis FASE 1:
-
-<ol type="1">
-  <li>
-    Documentação do sistema (DDD) com Event Storming, incluindo todos os
-    passos/tipos de diagrama mostrados na aula 6 do módulo de DDD, e utilizando
-    a linguagem ubíqua, dos seguintes fluxos:
-    <ol type="a">
-      <li>Realização do pedido e pagamento;</li>
-      <li>Preparação e entrega do pedido.</li>
-    </ol>
-    É importante que os desenhos sigam os padrões utilizados na explicação.
-    <ul>
-      <li>
-        <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/event-storming-felipe-leal-grupo-30.drawio" target="_blank">
-        Diagrama completo em draw.io</a>
-      </li>
-      <li>
-        <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/event-storming-felipe-leal-grupo-30.pdf" target="_blank">
-        Diagrama completo em pdf</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>
-      Uma aplicação para todo o sistema de backend (monolito) que deverá ser
-      desenvolvido seguindo os padrões apresentados nas aulas:
-    </p>
-    <ol>
-      <li>Utilizando arquitetura hexagonal</li>
-      <li>
-        APIs:
-        <ol>
-          <li>Cadastro do Cliente;</li>
-          <li>Identificação do Cliente via CPF;</li>
-          <li>Criar, editar e remover produtos;</li>
-          <li>Buscar produtos por categoria;</li>
-          <li>
-            Fake checkout, apenas enviar os produtos escolhidos para a fila. O
-            checkout é a finalização do pedido;
-          </li>
-          <li>Listar os pedidos.</li>
-        </ol>
-        <p>Disponibilizar também o Swagger para consumo dessas APIs <a href="http://localhost:3333/docs" target="_blank">link para acessar o swagger localmente: localhost:3333/docs</a></p>        
-      </li>
-      <li>
-        <p>Banco de dados à sua escolha</p>
-        <ol>
-          <li>
-            Inicialmente deveremos trabalhar e organizar a fila dos pedidos
-            apenas em banco de dados
-          </li>
-        </ol>
-      </li>
-    </ol>
-  </li>
-  <li>
-    A aplicação deve ser entregue com um Dockerfile configurado para executá-la
-    corretamente, e um docker-compose.yml para subir o ambiente completo. É
-    muito importante seguir boas práticas de segurança e melhorias para que a
-    inicialização seja feita de forma rápida.
-  </li>
-  <li>
-    <p>Para validação da POC, temos a seguinte limitação de infraestrutura:</p>
-    <ol>
-      <li>1 instância para banco de dados;</li>
-      <li>1 instâncias para executar aplicação;</li>
-      <li>Obrigatório utilizar no mínimo um Dockerfile.</li>
-    </ol>
-  </li>
-  <li>
-    Link para vídeo demonstrando a arquitetura desenvolvida localmente.
-    <ol>
-      <li>
-        O vídeo deve ser postado no Youtube, Vimeo ou compartilhado via Google
-        Drive/One Drive.
-      </li>
-      <li>Não esqueça de deixá-lo público ou não listado.</li>
-      <li>
-        O vídeo de demonstração sobre a execução da aplicação e banco através do
-        Docker Compose, deve conter informações relevantes sobre o projeto e
-        quais passos são necessários para que a aplicação funcione.
-      </li>
-    </ol>
-  </li>
-</ol>
-
-## 📊 Event Storming:
-
-<ul>
-  <li>
-    <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/event-storming-felipe-leal-grupo-30.drawio" target="_blank">
-    Diagrama completo em draw.io</a>
-  </li>
-  <li>
-    <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/event-storming-felipe-leal-grupo-30.pdf" target="_blank">
-    Diagrama completo em pdf</a>
-  </li>
-</ul>
-
-![ddd](https://github.com/user-attachments/assets/1b5ee2fe-113a-44c2-a68a-c904e79b5f02)
-
-## Fase 2
-
-kubectl apply -f k8s/
+## ▶️ K8s
 
 ```bash
 $ minikube start
@@ -220,6 +106,56 @@ $ kubectl get pods && kubectl get hpa
 
 $ kubectl run fortio --rm -i --tty --image=fortio/fortio -- load -qps 800 -t 60s -c 100 "http://fastfood-service/orders"
 ```
+
+## Entregáveis FASE 2:
+
+<ol type="1">
+  <li>
+    Atualizar a aplicação desenvolvida na FASE 1 refatorando o código para seguir os padrões Clean Code e Clean Architecture:
+    <ol type="a">
+      <li>Alterar/criar as APIs:</li>
+      <li type="i">
+        <li>Checkout Pedido que deverá receber os produtos solicitados e retornar a identificação do pedido.</li>
+        <li>Consultar status de pagamento pedido, que informa se o pagamento foi aprovado ou não.</li>
+        <li>Webhook para receber confirmação de pagamento aprovado ou recusado, a implementação deve ser clara quanto ao Webhook.</li>
+        <li>A lista de pedidos deverá retorná-los com suas descrições, ordenados com a seguinte regra:</li>
+        <ol type="1">
+          <li>Pronto > Em Preparação > Recebido;</li>
+          <li>Pedidos mais antigos primeiro e mais novos depois;</li>
+          <li>Pedidos com status Finalizado não devem aparecer na lista.</li>
+        </ol>
+        <li>Atualizar o status do pedido.
+          <ol type="1">
+              <li>Todo fluxo do pedido deve ser atualizado, tal informação deverá ser utilizada pela cozinha, garantindo que nenhum pedido seja perdido e que a cozinha possa iniciar a preparação após o pagamento. WebHook para capturar os pagamentos. Caso contrário, será necessário realizar o mock da parte de pagamentos. Como referência, acesse: site do mercado pago.</li>
+          </ol>
+        </li>
+      </li>
+    </ol>
+  </li>
+  <li>
+    Criar uma arquitetura em Kubernetes que atenda os seguintes requisitos: 
+    <ol type="a">
+      <li>Os requisitos funcionais descritos nos itens anteriores (item problema).</li>
+      <li>Escalabilidade com aumento e diminuição de Pods conforme demanda (HPA).</li>
+      <li>Os arquivos manifestos (yaml) precisam estar no Github junto com a nova versão do código.</li>
+      <li>Seguir boas práticas de segurança, utilizando ConfigMap e Secrets para valores sensíveis.</li>
+      <li>Seguir boas práticas de arquitetura, sempre utilizando Deployment e Service para expor a aplicação. </li>
+    </ol>
+  </li>
+</ol>
+
+## 📊 Clean Arch:
+
+<ul>
+  <li>
+    <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/desenho-topico3-felipe-leal-grupo-30-fase-2" target="_blank">
+    Diagrama Arquitetura K8s</a>
+  </li>
+  <li>
+    <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/clean_arch-felipe-leal-grupo-30-fase-2" target="_blank">
+    Diagrama Arquitetura Clean Arch</a>
+  </li>
+</ul>
 
 ### Autor
 
