@@ -148,11 +148,13 @@ $ kubectl run fortio --rm -i --tty --image=fortio/fortio -- load -qps 800 -t 60s
 
 <ul>
   <li>
-    <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/desenho-topico3-felipe-leal-grupo-30-fase-2" target="_blank">
+    <img width="842" alt="desenho-topico3-felipe-leal-grupo-30-fase-2@2x" src="https://github.com/user-attachments/assets/b4f65f02-fae5-4e2a-8be5-6010242aebee" />
+    <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/desenho-topico3-felipe-leal-grupo-30-fase-2.pdf" target="_blank">
     Diagrama Arquitetura K8s</a>
   </li>
   <li>
-    <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/clean_arch-felipe-leal-grupo-30-fase-2" target="_blank">
+    <img width="1356" alt="clean_arch-felipe-leal-grupo-30-fase-2" src="https://github.com/user-attachments/assets/2180b32a-790e-4fa3-b97b-3f023f706769" />
+    <a href="https://github.com/lealfelipealves/fiap-soat-architecture/blob/main/docs/clean_arch-felipe-leal-grupo-30-fase-2.pdf" target="_blank">
     Diagrama Arquitetura Clean Arch</a>
   </li>
 </ul>
