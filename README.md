@@ -114,22 +114,23 @@ $ kubectl run fortio --rm -i --tty --image=fortio/fortio -- load -qps 800 -t 60s
     Atualizar a aplicação desenvolvida na FASE 1 refatorando o código para seguir os padrões Clean Code e Clean Architecture:
     <ol type="a">
       <li>Alterar/criar as APIs:</li>
-      <li type="i">
+      <ol type="i">
         <li>Checkout Pedido que deverá receber os produtos solicitados e retornar a identificação do pedido.</li>
         <li>Consultar status de pagamento pedido, que informa se o pagamento foi aprovado ou não.</li>
         <li>Webhook para receber confirmação de pagamento aprovado ou recusado, a implementação deve ser clara quanto ao Webhook.</li>
-        <li>A lista de pedidos deverá retorná-los com suas descrições, ordenados com a seguinte regra:</li>
-        <ol type="1">
-          <li>Pronto > Em Preparação > Recebido;</li>
-          <li>Pedidos mais antigos primeiro e mais novos depois;</li>
-          <li>Pedidos com status Finalizado não devem aparecer na lista.</li>
-        </ol>
+        <li>A lista de pedidos deverá retorná-los com suas descrições, ordenados com a seguinte regra:
+          <ol type="1">
+            <li>Pronto > Em Preparação > Recebido;</li>
+            <li>Pedidos mais antigos primeiro e mais novos depois;</li>
+            <li>Pedidos com status Finalizado não devem aparecer na lista.</li>
+          </ol>
+        </li>
         <li>Atualizar o status do pedido.
           <ol type="1">
               <li>Todo fluxo do pedido deve ser atualizado, tal informação deverá ser utilizada pela cozinha, garantindo que nenhum pedido seja perdido e que a cozinha possa iniciar a preparação após o pagamento. WebHook para capturar os pagamentos. Caso contrário, será necessário realizar o mock da parte de pagamentos. Como referência, acesse: site do mercado pago.</li>
           </ol>
         </li>
-      </li>
+      </ol>
     </ol>
   </li>
   <li>
