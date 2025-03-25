@@ -102,7 +102,13 @@ $ minikube start
 
 $ kubectl apply -f k8s/
 
-$ kubectl get pods && kubectl get hpa
+$ kubectl get pods
+
+$ kubectl get hpa
+
+$ kubectl get svc
+
+$ minikube service fastfood-service
 
 $ kubectl run fortio --rm -i --tty --image=fortio/fortio -- load -qps 800 -t 60s -c 100 "http://fastfood-service/orders"
 ```
