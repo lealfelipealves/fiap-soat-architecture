@@ -29,7 +29,7 @@ Este projeto é parte do **Software Architecture Tech Challenge - Fase 2**. Ele 
 
 ## 🎥 Demo
 
-[![Video demonstração](https://img.youtube.com/vi/zvsGC-gbdC8/0.jpg)](https://www.youtube.com/watch?v=zvsGC-gbdC8)
+[![Video demonstração](https://img.youtube.com/vi/tynOvtxLzq0/0.jpg)](https://www.youtube.com/watch?v=tynOvtxLzq0)
 
 ## 🚀 Instruções para Instalação
 
