@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">Software Architecture Tech Challenge - Fase 2</p>
-<p align="center">Grupo 30 - Felipe Alves Leal</p>
+<p align="center">Grupo 12 - Felipe Alves Leal</p>
 
 ## 📄 Descrição
 
