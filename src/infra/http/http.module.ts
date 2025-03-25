@@ -11,6 +11,7 @@ import { DeleteProductUseCase } from '@/domain/fastfood/application/use-cases/de
 import { CreateProductController } from './controllers/create-product.controller'
 import { EditProductController } from './controllers/edit-product.controller'
 import { UpdateOrderStatusController } from './controllers/update-order-status.controller'
+import { PaymentWebhookController } from './controllers/webhook-payment.controller'
 import { DeleteProductController } from './controllers/delete-product.controller'
 import { GetProductByCategoryController } from './controllers/get-product-by-category.controller'
 import { GetProductByCategoryUseCase } from '@/domain/fastfood/application/use-cases/get-product-by-category'
@@ -22,6 +23,7 @@ import { CheckoutOrderController } from './controllers/checkout-order.controller
 import { GetOrderPaymentStatusController } from './controllers/get-order-payment-status.controller'
 import { CheckoutOrderUseCase } from '@/domain/fastfood/application/use-cases/checkout-order'
 import { UpdateOrderStatusUseCase } from '@/domain/fastfood/application/use-cases/update-order-status'
+import { UpdatePaymentStatusUseCase } from '@/domain/fastfood/application/use-cases/update-payment-status'
 @Module({
   imports: [DatabaseModule],
   controllers: [
@@ -35,7 +37,8 @@ import { UpdateOrderStatusUseCase } from '@/domain/fastfood/application/use-case
     CreateOrderController,
     GetOrderPaymentStatusController,
     CheckoutOrderController,
-    UpdateOrderStatusController
+    UpdateOrderStatusController,
+    PaymentWebhookController
   ],
   providers: [
     GetCustomerByCpfUseCase,
@@ -48,7 +51,8 @@ import { UpdateOrderStatusUseCase } from '@/domain/fastfood/application/use-case
     CreateOrderUseCase,
     CheckoutOrderUseCase,
     GetOrderPaymentStatusUseCase,
-    UpdateOrderStatusUseCase
+    UpdateOrderStatusUseCase,
+    UpdatePaymentStatusUseCase
   ]
 })
 export class HttpModule {}

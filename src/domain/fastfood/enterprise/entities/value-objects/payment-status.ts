@@ -1,4 +1,4 @@
-export type PaymentStatusType = (typeof PaymentStatus.VALID_STATUSES)[number]
+export type PaymentStatusType = (typeof PaymentStatus.VALID_STATUS)[number]
 
 export class PaymentStatus {
   private readonly value: string
@@ -7,7 +7,7 @@ export class PaymentStatus {
   public static readonly REJECTED = 'Recusado'
   public static readonly PENDING = 'Pendente'
 
-  static readonly VALID_STATUSES = [
+  static readonly VALID_STATUS = [
     this.APPROVED,
     this.REJECTED,
     this.PENDING
@@ -18,7 +18,7 @@ export class PaymentStatus {
   }
 
   static create(value: string): PaymentStatus {
-    if (!this.VALID_STATUSES.includes(value as PaymentStatusType)) {
+    if (!this.VALID_STATUS.includes(value as PaymentStatusType)) {
       throw new Error(`Invalid payment status: ${value}`)
     }
     return new PaymentStatus(value)

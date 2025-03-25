@@ -1,4 +1,4 @@
-export type StatusType = (typeof Status.VALID_STATUSES)[number]
+export type StatusType = (typeof Status.VALID_STATUS)[number]
 export class Status {
   private readonly value: string
 
@@ -7,7 +7,7 @@ export class Status {
   public static readonly READY = 'Pronto'
   public static readonly FINALIZED = 'Finalizado'
 
-  static readonly VALID_STATUSES = [
+  static readonly VALID_STATUS = [
     this.RECEIVED,
     this.IN_PREPARATION,
     this.READY,
@@ -19,7 +19,7 @@ export class Status {
   }
 
   static create(value: string): Status {
-    if (!this.VALID_STATUSES.includes(value as StatusType)) {
+    if (!this.VALID_STATUS.includes(value as StatusType)) {
       throw new Error(`Invalid status: ${value}`)
     }
     return new Status(value)
